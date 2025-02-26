@@ -1,9 +1,5 @@
-import io
-
-import pandas as pd
 import streamlit as st
 from PIL import Image
-from camera_input_live import camera_input_live
 import numpy as np
 import plotly.graph_objects as go
 
