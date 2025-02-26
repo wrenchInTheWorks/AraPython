@@ -9,7 +9,11 @@ def bytesio_to_np_array(bytes_stream):
     return np.array(image, dtype=np.uint32)  # Convert image to numpy array
 
 if __name__ == '__main__':
-    image = st.camera_input('Please take a picture of the spectrum')
+    photo = st.camera_input('Please take a picture of the spectrum')
+    image = st.file_uploader('alternatively please upload an image of the spectrum', type=['png', 'jpg', 'jpeg'], accept_multiple_files=False)  # Upload image
+
+    if photo and not image:
+        image = photo
 
     if image:
         image = bytesio_to_np_array(image)
